@@ -5,34 +5,32 @@
   <title>🎵 Audio ⇄ Lyrics Converter</title>
   <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Roboto&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg-color: #f4f7fb;
-      --text-color: #222;
-      --card-bg: #fff;
-    }
-
-    body.dark {
-      --bg-color: #121212;
-      --text-color: #f0f0f0;
-      --card-bg: #1e1e1e;
-    }
-
     body {
       margin: 0;
       padding: 0;
       font-family: 'Roboto', sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      transition: all 0.3s ease;
+      background: linear-gradient(135deg, #8EC5FC 0%, #E0C3FC 100%);
+      color: #222;
+      transition: all 0.4s ease;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    body.dark {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      color: #f0f0f0;
     }
 
     .container {
       max-width: 850px;
-      margin: 40px auto;
-      padding: 30px;
-      background-color: var(--card-bg);
+      width: 90%;
+      padding: 35px;
+      background: rgba(255, 255, 255, 0.15);
       border-radius: 20px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(12px);
       text-align: center;
       position: relative;
     }
@@ -41,98 +39,104 @@
       position: absolute;
       top: 20px;
       right: 20px;
-      background-color: #444;
+      background-color: rgba(0,0,0,0.6);
       color: #fff;
       border: none;
       border-radius: 20px;
       padding: 6px 12px;
       cursor: pointer;
       font-size: 14px;
+      transition: background 0.3s ease;
+    }
+
+    .toggle-theme:hover {
+      background-color: rgba(0,0,0,0.8);
     }
 
     .logo {
-      animation: spin 6s linear infinite;
-      width: 80px;
-      margin: 10px auto;
+      width: 90px;
+      margin: 10px auto 15px;
+      animation: float 3s ease-in-out infinite;
     }
 
-    @keyframes spin {
-      0% { transform: rotate(0); }
-      100% { transform: rotate(360deg); }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
     }
 
     h1 {
       font-family: 'Concert One', cursive;
-      font-size: 2.3rem;
-      margin: 15px 0 10px;
+      font-size: 2.4rem;
+      margin: 10px 0 20px;
+      color: #fff;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.3);
     }
 
-    select, input[type='text'] {
-      padding: 10px 15px;
+    select, input[type='text'], textarea {
+      padding: 12px 15px;
       font-size: 16px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
+      border-radius: 10px;
+      border: none;
       margin-bottom: 15px;
       width: 90%;
-      max-width: 300px;
+      max-width: 400px;
+      outline: none;
     }
 
-    #transcript {
-      width: 100%;
+    textarea {
       height: 180px;
-      padding: 15px;
-      font-size: 16px;
-      border: 2px solid #ddd;
-      border-radius: 12px;
-      background-color: #fefefe;
-      color: #000;
       resize: vertical;
+      background: rgba(255,255,255,0.8);
     }
 
-    body.dark #transcript {
-      background-color: #2a2a2a;
-      color: #f0f0f0;
-      border-color: #444;
+    body.dark textarea {
+      background: rgba(0,0,0,0.3);
+      color: #fff;
     }
 
     .buttons {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 10px;
+      gap: 12px;
       margin-top: 15px;
     }
 
     button {
-      padding: 12px 22px;
+      padding: 12px 24px;
       font-size: 15px;
       border: none;
       border-radius: 25px;
       cursor: pointer;
       font-family: 'Concert One', cursive;
-      transition: 0.3s ease;
+      transition: all 0.3s ease;
+      color: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
-    .start-btn { background-color: #28a745; color: white; }
-    .stop-btn { background-color: #dc3545; color: white; }
-    .download-btn { background-color: #ffc107; color: black; }
-    .speak-btn { background-color: #007bff; color: white; }
-    .save-btn { background-color: #6f42c1; color: white; }
-    .preview-btn { background-color: #17a2b8; color: white; }
+    .start-btn { background: linear-gradient(90deg, #28a745, #4cd964); }
+    .stop-btn { background: linear-gradient(90deg, #dc3545, #ff6b6b); }
+    .speak-btn { background: linear-gradient(90deg, #007bff, #00b4d8); }
+    .save-btn { background: linear-gradient(90deg, #6f42c1, #b5179e); }
 
-    button:hover { transform: scale(1.05); }
+    button:hover {
+      transform: scale(1.07);
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
 
     .status {
-      margin-top: 12px;
+      margin-top: 15px;
       font-weight: bold;
       font-size: 16px;
+      color: #fff;
     }
 
     .footer {
       text-align: center;
       font-size: 0.9rem;
       margin-top: 30px;
-      color: #777;
+      color: rgba(255,255,255,0.8);
     }
 
     #voiceSelect {
@@ -141,7 +145,7 @@
     }
 
     @media screen and (max-width: 600px) {
-      h1 { font-size: 1.9rem; }
+      h1 { font-size: 2rem; }
       .buttons { flex-direction: column; }
       button, select, input[type='text'] { width: 95%; }
     }
@@ -150,7 +154,7 @@
 <body>
 
   <div class="container">
-    <button class="toggle-theme" onclick="toggleTheme()">🌓 Toggle Mode</button>
+    <button class="toggle-theme" onclick="toggleTheme()">🌓</button>
     <img class="logo" src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="Music Logo" />
 
     <h1>🎵 Audio ⇄ Lyrics Converter</h1>
@@ -171,15 +175,13 @@
       <button class="start-btn" id="startBtn" style="display:none;">Start Listening</button>
       <button class="stop-btn" id="stopBtn" disabled style="display:none;">Stop</button>
       <button class="speak-btn" id="speakBtn" style="display:none;" onclick="speakLyrics()">Speak</button>
-      <button class="preview-btn" id="previewBtn" style="display:none;" onclick="previewAudio()">🔊 Preview</button>
-      <button class="download-btn" onclick="downloadText()" id="downloadBtn">Download Lyrics</button>
       <button class="save-btn" onclick="saveToLocal()">Save</button>
     </div>
 
     <div class="status" id="status">Not Listening</div>
   </div>
 
-  <div class="footer">🎶 Made for music lovers | Edit, convert & download freely</div>
+  <div class="footer">🎶 Made for music lovers | Feel the rhythm in code 🎧</div>
 
   <script>
     let recognition;
@@ -191,8 +193,6 @@
     const statusText = document.getElementById("status");
     const modeSelect = document.getElementById("modeSelect");
     const speakBtn = document.getElementById("speakBtn");
-    const previewBtn = document.getElementById("previewBtn");
-    const downloadBtn = document.getElementById("downloadBtn");
     const voiceSelect = document.getElementById("voiceSelect");
 
     function toggleTheme() {
@@ -205,16 +205,12 @@
         startBtn.style.display = "inline-block";
         stopBtn.style.display = "inline-block";
         speakBtn.style.display = "none";
-        previewBtn.style.display = "none";
         voiceSelect.style.display = "none";
-        downloadBtn.textContent = "Download Lyrics";
       } else if (mode === "lyricsToAudio") {
         startBtn.style.display = "none";
         stopBtn.style.display = "none";
         speakBtn.style.display = "inline-block";
-        previewBtn.style.display = "inline-block";
         voiceSelect.style.display = "inline-block";
-        downloadBtn.textContent = "Download Audio";
         loadVoices();
       }
     }
@@ -279,10 +275,6 @@
       utter.lang = "en-US";
       utter.voice = selectedVoice;
       speechSynthesis.speak(utter);
-    }
-
-    function previewAudio() {
-      speakLyrics();
     }
 
     async function translateHindiToEnglish(text) {
