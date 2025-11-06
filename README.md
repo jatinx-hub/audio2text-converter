@@ -1,9 +1,8 @@
 <h1 align="center">🎵 Audio ⇄ Lyrics Converter</h1>
 
 <p align="center">
-  <b>A simple web app to convert audio files into lyrics or text — built with HTML, CSS, and JavaScript.</b>
-  <br/>
-  <br/>
+  <b>An interactive web app that converts speech into lyrics, lyrics into audio, or even translates Hindi to English — all in your browser.</b>
+  <br/><br/>
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
@@ -12,16 +11,23 @@
 ---
 
 ### 🚀 Overview
-The **Audio ⇄ Lyrics Converter** lets you easily transform audio into readable text/lyrics right in your browser.  
-No setup or backend required — just a simple, responsive, front-end project that runs locally or online.
+The **Audio ⇄ Lyrics Converter** is a browser-based app that lets you:
+- Convert your **voice/audio to text or lyrics**
+- Convert **lyrics back to speech**
+- Instantly **translate Hindi speech into English text**
+- **Download lyrics as PDF**
+
+It’s completely front-end based — no backend, no setup. Just open and start creating magic!
 
 ---
 
 ### ✨ Features
-- 🎧 Convert audio into readable text/lyrics  
-- 📝 Clean, responsive UI built with HTML & CSS  
-- 🧠 Fast and lightweight — works directly in the browser  
-- 🧩 Beginner-friendly and easy to customize  
+- 🎙 **Audio → Lyrics/Text:** Speak and see your words appear instantly  
+- 🗣 **Lyrics → Audio:** Hear your text read aloud in natural voices  
+- 🌍 **Hindi → English Translation:** Live voice translation using Google Translate API  
+- 📄 **Save as PDF:** Download your converted or translated text as a clean PDF file  
+- 🌙 **Responsive UI:** Works perfectly on mobile and desktop  
+- ⚡ **Lightweight & Fast:** Built using pure HTML, CSS, and JavaScript  
 
 ---
 
@@ -30,13 +36,25 @@ No setup or backend required — just a simple, responsive, front-end project th
 |----------|-------------|
 | Structure | **HTML5** |
 | Styling | **CSS3** |
-| Logic | **JavaScript** |
-| Design | **Figma** |
+| Logic / Speech Processing | **JavaScript (Web Speech API)** |
+| PDF Export | **jsPDF** |
+| Translation | **Google Translate API** |
+
+---
+
+### 🧩 How It Works
+1. **Select a mode**:
+   - 🎧 Audio to Lyrics  
+   - 🗣 Lyrics to Audio  
+   - 🌐 Hindi to English  
+2. **Start recording or typing** your content  
+3. **Convert / Translate / Play** your results  
+4. **Download your lyrics as PDF**
 
 ---
 
 ### 🌐 Live Demo
-🔗 **Try it here:** [View Website](https://jatinx-hub.github.io/audio-lyrics-converter/)
+🔗 **Try it now:** [View Website](https://jatinx-hub.github.io/audio-lyrics-converter/)
 
 ---
 
@@ -53,5 +71,5 @@ No setup or backend required — just a simple, responsive, front-end project th
 ---
 
 <p align="center">
-  ⭐ <b>Always learning, always building.</b> 🚀
+  ⭐ <b>Always learning, always building.</b> 🚀  
 </p>
