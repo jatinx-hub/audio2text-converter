@@ -1,7 +1,7 @@
-<h1 align="center">🎵 Audio ⇄ Lyrics Converter</h1>
+<h1 align="center">🎵 Audio ⇄ Text Converter</h1>
 
 <p align="center">
-  <b>An interactive web app that converts speech into lyrics, lyrics into audio, or even translates Hindi to English — all in your browser.</b>
+  <b>An interactive web app that converts speech into text, text into audio, or even translates Hindi to English — all in your browser.</b>
   <br/><br/>
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
@@ -11,11 +11,11 @@
 ---
 
 ### 🚀 Overview
-The **Audio ⇄ Lyrics Converter** is a browser-based app that lets you:
+The **Audio ⇄ Text Converter** is a browser-based app that lets you:
 - Convert your **voice/audio to text or lyrics**
-- Convert **lyrics back to speech**
+- Convert **text back to speech**
 - Instantly **translate Hindi speech into English text**
-- **Download lyrics as PDF**
+- **Download text as PDF**
 
 It’s completely front-end based — no backend, no setup. Just open and start creating magic!
 
@@ -23,7 +23,7 @@ It’s completely front-end based — no backend, no setup. Just open and start 
 
 ### ✨ Features
 - 🎙 **Audio → Lyrics/Text:** Speak and see your words appear instantly  
-- 🗣 **Lyrics → Audio:** Hear your text read aloud in natural voices  
+- 🗣 **Text → Audio:** Hear your text read aloud in natural voices  
 - 🌍 **Hindi → English Translation:** Live voice translation using Google Translate API  
 - 📄 **Save as PDF:** Download your converted or translated text as a clean PDF file  
 - 🌙 **Responsive UI:** Works perfectly on mobile and desktop  
@@ -44,12 +44,12 @@ It’s completely front-end based — no backend, no setup. Just open and start 
 
 ### 🧩 How It Works
 1. **Select a mode**:
-   - 🎧 Audio to Lyrics  
-   - 🗣 Lyrics to Audio  
+   - 🎧 Audio to Text  
+   - 🗣 Text to Audio  
    - 🌐 Hindi to English  
 2. **Start recording or typing** your content  
 3. **Convert / Translate / Play** your results  
-4. **Download your lyrics as PDF**
+4. **Download your text as PDF**
 
 ---
 
